@@ -6,11 +6,7 @@ import { usePathname } from "next/navigation";
 
 export default function HideFooter() {
   const path = usePathname();
-  if (path === "/signIn" || path === "/signUp") {
-    return null;
-  } else {
-    return <Footer />;
-  }
+  return path === "/signIn" || path === "signUp" ? null : <Footer /> 
 }
 
 export function Footer() {

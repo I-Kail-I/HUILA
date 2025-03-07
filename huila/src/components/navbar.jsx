@@ -1,106 +1,88 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { DiHaskell } from "react-icons/di";
+import { IoIosMenu as Menu } from "react-icons/io";
+import { IoMdClose as X } from "react-icons/io";
 
-export default function hideNavbar() {
+export default function HideNavbar() {
   const path = usePathname();
-
-  if (path === "/signIn") {
-    return null;
-  } else {
-    return <Navbar />;
-  }
+  return path === "/signIn" || path === "signUp" ? null : <Navbar />;
 }
 
 export function Navbar() {
+  const [navbarExpand, setNavbarExpand] = useState(false);
+
   return (
-    <>
-      <nav className="bg-white sticky top-0 z-10">
-        <div className="max-w-7xl mx-auto px-auto sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 flex-nowrap">
-            <div className="flex items-center">
-              <div className="flex flex-shrink-0">
-                <Link href="/" passHref>
-                  <motion.p
-                    className="text-black p-1"
-                    whileTap={{
-                      scale: 0.9,
-                    }}
-                    transition={{
-                      type: "spring",
-                      stiffness: 300,
-                      damping: 50,
-                      duration: 0.3,
-                    }}
-                  >
-                    <DiHaskell size={40} />
-                  </motion.p>
-                </Link>
-              </div>
-            </div>
+    <nav className="bg-white sticky top-0 z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <Link href="/" passHref>
+            <motion.p
+              className="text-black p-1"
+              whileTap={{ scale: 0.9 }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+                damping: 50,
+                duration: 0.3,
+              }}
+            >
+              <DiHaskell size={40} />
+            </motion.p>
+          </Link>
 
-            <div className="flex items-center justify-center gap-x-8">
-
-            <div className="flex flex-shrink-0">
-                <Link href="#" passHref>
-                  <motion.p
-                    className="text-black p-1 rounded-sm hover:bg-black/20 duration-200"
-                    whileTap={{
-                      scale: 0.9,
-                    }}
-                    transition={{
-                      type: "spring",
-                      stiffness: 200,
-                      duration: 0.1,
-                    }}
-                  >
-                    Support
-                  </motion.p>
-                </Link>
-              </div>
-
-              <div className="flex flex-shrink-0">
-                <Link href="#" passHref>
-                  <motion.p
-                    className="text-black p-1 rounded-sm hover:bg-black/20 duration-200"
-                    whileTap={{
-                      scale: 0.9,
-                    }}
-                    transition={{
-                      type: "spring",
-                      stiffness: 200,
-                      duration: 0.1,
-                    }}
-                  >
-                    Services
-                  </motion.p>
-                </Link>
-              </div>
-
-              <div className="flex flex-shrink-0">
-                <Link href="#" passHref>
-                  <motion.p
-                    className="text-black p-1 rounded-sm hover:bg-black/20 duration-200"
-                    whileTap={{
-                      scale: 0.9,
-                    }}
-                    transition={{
-                      type: "spring",
-                      stiffness: 200,
-                      duration: 0.1,
-                    }}
-                  >
-                    About
-                  </motion.p>
-                </Link>
-              </div>
-            </div>
+          {/* Desktop Links */}
+          <div className="hidden md:flex items-center gap-x-8">
+            {["Support", "Services", "About"].map((item) => (
+              <Link key={item} href="#" passHref>
+                <motion.p
+                  className="text-black p-1 rounded-sm hover:bg-black/20 duration-200"
+                  whileTap={{ scale: 0.9 }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 200,
+                    duration: 0.1,
+                  }}
+                >
+                  {item}
+                </motion.p>
+              </Link>
+            ))}
           </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden"
+            onClick={() => setNavbarExpand(!navbarExpand)}
+          >
+            {navbarExpand ? (
+              <X size={30} className="cursor-pointer hover:text-gray-500" />
+            ) : (
+              <Menu size={30} className="cursor-pointer hover:text-gray-500" />
+            )}
+          </button>
         </div>
-      </nav>
-    </>
+      </div>
+
+      {/* Mobile Menu */}
+      {navbarExpand && (
+        <div className="md:hidden bg-white border-t border-gray-200">
+          {["Support", "Services", "About"].map((item) => (
+            <Link key={item} href="#" passHref>
+              <motion.p
+                className="p-4 text-black hover:bg-black/10"
+                whileTap={{ scale: 0.95 }}
+              >
+                {item}
+              </motion.p>
+            </Link>
+          ))}
+        </div>
+      )}
+    </nav>
   );
 }
