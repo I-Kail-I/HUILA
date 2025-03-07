@@ -4,7 +4,9 @@ import Image from "next/image";
 import HomeImage from "../../public/home/Home Image.avif";
 import PhoneHomeImage from "../../public/home/Phone Home Image.avif";
 import { motion } from "framer-motion";
+import { IoPersonCircleSharp } from "react-icons/io5";
 import RainbowTrail from "../../public/home/Rainbow Trail.png";
+import Link from "next/link";
 
 // Calendar component for the right part of the third section
 const Calendar = () => {
@@ -215,24 +217,25 @@ const Calendar = () => {
   };
 
   return (
-<motion.div
-  className="max-w-md mx-auto bg-white shadow-lg rounded-lg overflow-hidden"
-  initial="hidden"
-  animate="visible"
-  variants={containerVariants}
-  style={{ zIndex: 0 }}
->
-
+    <motion.div
+      className="max-w-md mx-auto bg-white shadow-lg rounded-lg overflow-hidden"
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+      style={{ zIndex: 0 }}
+    >
       <motion.div className="px-6 py-4 border-b" variants={headerVariants}>
         <div className="flex justify-between items-center">
           <div>
             <h1 className="text-2xl font-bold text-gray-800">Upcoming</h1>
             <div className="text-gray-500 mt-1">March 2025</div>
           </div>
+
           <div className="flex space-x-2">
             <button className="px-3 py-1 border rounded">
               <span className="text-gray-500">Today</span>
             </button>
+
             <button className="px-3 py-1 border rounded">
               <span className="text-gray-500">Plan</span>
             </button>
@@ -383,11 +386,12 @@ export default function Home() {
             work and life, finally.
           </h1>
 
-          <p className="text-lg text-wrap text-gray-600">
+          <p className="text-sm text-wrap text-gray-600 sm:text-sm md:text-xl lg:text-lg">
             Simplify life for both you and your team with the world's #1 task
             manager and to-do list app.
           </p>
 
+          <Link href="/dashboard">
           <motion.button
             className="bg-red-500 text-white font-semibold px-6 py-2 rounded-xl lg:w-sm md:w-sm sm:w-sm cursor-pointer hover:bg-red-600"
             whileTap={{ scale: 0.96 }}
@@ -401,6 +405,7 @@ export default function Home() {
           >
             Start for free
           </motion.button>
+          </Link>
         </div>
 
         <div className="rightContainer w-full lg:w-240 md:w-140 order-2 lg:order-2">
@@ -437,26 +442,59 @@ export default function Home() {
             animate={{ x: ["100%", "-100%"] }}
             transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
           >
-            <div className="font-mono border-r-1 py-7 border-gray-500/40 pe-4">
-              "Simple, straightforward, and super powerful"
+            <div className="font-mono bg-amber-100/50 rounded-lg py-7 border-gray-500/40 p-5">
+              <div className="personContainer flex w-full items-center mb-4">
+                <IoPersonCircleSharp size={30} className="me-1" />{" "}
+                <h3>Kevin</h3>
+              </div>
+              <p>"Simple, straightforward, and super powerful" </p>
             </div>
-            <div className="font-mono border-r-1 py-7 border-gray-500/40 pe-4">
-              "The best to-do list app on the market"
+
+            <div className="font-mono bg-amber-100/50 rounded-lg py-7 border-gray-500/40 p-5">
+              <div className="personContainer flex w-full items-center mb-4">
+                <IoPersonCircleSharp size={30} className="me-1" />{" "}
+                <h3>Salam</h3>
+              </div>
+              <p>"The best to-do list app on the market"</p>
             </div>
-            <div className="font-mono border-r-1 py-7 border-gray-500/40 pe-4">
-              "Nothing short of stellar"
+
+            <div className="font-mono bg-amber-100/50 rounded-lg py-7 border-gray-500/40 p-5">
+              <div className="personContainer flex w-full items-center mb-4">
+                <IoPersonCircleSharp size={30} className="me-1" />
+                <h3>Indra</h3>
+              </div>
+              <p>"Nothing short of stellar"</p>
             </div>
           </motion.div>
         ) : (
           <>
-            <div className="font-mono border-r-1 py-7 border-gray-500/40 pe-4">
-              "Simple, straightforward, <br /> and super powerful"
+            <div className="font-mono bg-amber-100/50 rounded-lg py-7 border-gray-500/40 p-5">
+              <div className="personContainer flex w-full items-center mb-4">
+                <IoPersonCircleSharp size={30} className="me-1" />
+                <h3>Kevin</h3>
+              </div>
+              <p>
+                "Simple, straightforward, <br />
+                and super powerful"
+              </p>
             </div>
-            <div className="font-mono border-r-1 py-7 border-gray-500/40 pe-4">
-              "The best to-do list app <br /> on the market"
+
+            <div className="font-mono bg-amber-100/50 rounded-lg py-7 border-gray-500/40 p-5">
+              <div className="personContainer flex w-full items-center mb-4">
+                <IoPersonCircleSharp size={30} className="me-1" />{" "}
+                <h3>Salam</h3>
+              </div>
+              <p>
+                "The best to-do list app on <br /> the market"
+              </p>
             </div>
-            <div className="font-mono border-r-1 border-gray-500/40 pe-4 py-8">
-              "Nothing short of <br /> stellar"
+
+            <div className="font-mono bg-amber-100/50 rounded-lg py-7 border-gray-500/40 p-5">
+              <div className="personContainer flex w-full items-center mb-4">
+                <IoPersonCircleSharp size={30} className="me-1" />{" "}
+                <h3>Indra</h3>
+              </div>
+              <p>"Nothing short of stellar"</p>
             </div>
           </>
         )}

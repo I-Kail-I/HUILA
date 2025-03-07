@@ -12,7 +12,7 @@ export default function HideFooter() {
 export function Footer() {
   return (
     <footer className="relative bottom-0 w-full">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-gray-500/40 py-8 bg-gray-500/10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-gray-500/40 py-8 bg-white">
         <div className="flex flex-col lg:flex-row justify-between space-y-8 lg:space-y-0">
           <div className="w-full lg:w-1/3">
             <ul className="space-y-4">
@@ -22,6 +22,7 @@ export function Footer() {
                   <h1 className="text-xl font-bold">HUILA</h1>
                 </Link>
               </li>
+              
               <li>
                 <p className="text-gray-600">
                   Join millions of people who organize work and life with HUILA.
@@ -42,6 +43,7 @@ export function Footer() {
                     About Us
                   </Link>
                 </li>
+
                 <li>
                   <Link
                     href="/services"
@@ -50,6 +52,7 @@ export function Footer() {
                     Services
                   </Link>
                 </li>
+
                 <li>
                   <Link
                     href="/contact"
@@ -72,6 +75,7 @@ export function Footer() {
                     Blog
                   </Link>
                 </li>
+
                 <li>
                   <Link
                     href="/faq"
@@ -80,6 +84,7 @@ export function Footer() {
                     FAQ
                   </Link>
                 </li>
+
                 <li>
                   <Link
                     href="/privacy"
@@ -102,6 +107,7 @@ export function Footer() {
                     Twitter
                   </Link>
                 </li>
+
                 <li>
                   <Link
                     href="https://facebook.com"
@@ -110,6 +116,7 @@ export function Footer() {
                     Facebook
                   </Link>
                 </li>
+                
                 <li>
                   <Link
                     href="https://instagram.com"
