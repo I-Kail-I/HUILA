@@ -440,18 +440,18 @@ export default function Home() {
           <motion.div
             className="flex space-x-40 justify-center items-center"
             animate={{ x: ["100%", "-100%"] }}
-            transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
+            transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
           >
             <div className="font-mono bg-amber-100/50 rounded-lg py-7 border-gray-500/40 p-5">
-              <div className="personContainer flex w-full items-center mb-4">
+              <div className="personContainer flex w-full items-center mb-4 px-10">
                 <IoPersonCircleSharp size={30} className="me-1" />{" "}
-                <h3>Kevin</h3>
+                <h3>SAMPAH</h3>
               </div>
               <p>"Simple, straightforward, and super powerful" </p>
             </div>
 
             <div className="font-mono bg-amber-100/50 rounded-lg py-7 border-gray-500/40 p-5">
-              <div className="personContainer flex w-full items-center mb-4">
+              <div className="personContainer flex w-full items-center mb-4 px-10">
                 <IoPersonCircleSharp size={30} className="me-1" />{" "}
                 <h3>Salam</h3>
               </div>
@@ -459,7 +459,7 @@ export default function Home() {
             </div>
 
             <div className="font-mono bg-amber-100/50 rounded-lg py-7 border-gray-500/40 p-5">
-              <div className="personContainer flex w-full items-center mb-4">
+              <div className="personContainer flex w-full items-center mb-4 px-10">
                 <IoPersonCircleSharp size={30} className="me-1" />
                 <h3>Indra</h3>
               </div>
