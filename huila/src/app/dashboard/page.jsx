@@ -15,7 +15,7 @@ import {
 } from "react-icons/fa";
 import { RiTodoLine } from "react-icons/ri";
 
-const TodoList = () => {
+export default function TodoList() {
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState("");
   const [category, setCategory] = useState("all");
@@ -99,7 +99,7 @@ const TodoList = () => {
             <div className="flex items-center">
               <RiTodoLine className="text-blue-500 text-3xl mr-3" />
               <h1 className="text-3xl font-bold text-gray-800">
-                Todo Dashboard
+                To-do Dashboard
               </h1>
             </div>
           </div>
@@ -293,6 +293,4 @@ const TodoList = () => {
       </div>
     </div>
   );
-};
-
-export default TodoList;
+}
