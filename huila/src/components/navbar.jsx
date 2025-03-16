@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
@@ -14,6 +14,7 @@ export default function HideNavbar() {
 
 export function Navbar() {
   const [navbarExpand, setNavbarExpand] = useState(false);
+  const path = usePathname();
 
   return (
     <nav className="bg-white sticky top-0 z-10">
@@ -41,7 +42,9 @@ export function Navbar() {
             {["Dashboard", "Services", "About"].map((item) => (
               <Link key={item} href={item.toLowerCase()} passHref>
                 <motion.p
-                  className="text-black p-1 rounded-sm hover:bg-black/20 duration-200"
+                  className={`text-black p-2 rounded-sm hover:bg-black/20 duration-200 ${
+                    path === `/${item.toLowerCase()}` ? "bg-blue-300 hover:bg-blue-300" : ""
+                  }`}
                   whileTap={{ scale: 0.9 }}
                   transition={{
                     type: "spring",
