@@ -17,7 +17,7 @@ export function Navbar() {
   const path = usePathname();
 
   return (
-    <nav className="bg-white sticky top-0 z-10">
+    <nav className="bg-white fixed top-0 z-10 w-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}

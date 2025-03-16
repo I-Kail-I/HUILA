@@ -378,7 +378,7 @@ export default function Home() {
   }, [widthWindow]);
 
   return (
-    <div className="homeContainer min-h-screen">
+    <div className="homeContainer min-h-screen pt-16">
       <section className="header flex flex-col lg:flex-row justify-center items-center lg:text-start text-center lg:items-start mt-25 mx-10 gap-15">
         <div className="leftContainer flex flex-col order-1 lg:order-1 lg:mr-8 gap-y-8 md:items-center sm:items-center">
           <h1 className="font-bold text-2xl lg:text-5xl lg:font-semibold md:text-3xl sm:text-3xl text-pretty">

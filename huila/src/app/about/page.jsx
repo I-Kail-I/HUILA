@@ -21,7 +21,7 @@ export default function AboutUs() {
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pt-16 bg-black">
       <section className="intro h-full w-full flex justify-center items-center bg-[#5eb5ab]/40 px-7 py-10 border-b border-black/10">
         <div className="w-full flex flex-col justify-center text-center ">
           <h1 className="text-5xl font-bold font-serif text-cyan-950">
