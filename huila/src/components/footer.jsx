@@ -64,37 +64,7 @@ export function Footer() {
               </ul>
             </div>
 
-            <div className="flex-1">
-              <h2 className="text-lg font-semibold mb-4">Resources</h2>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    href="/blog"
-                    className="text-gray-600 hover:text-gray-900"
-                  >
-                    Blog
-                  </Link>
-                </li>
-
-                <li>
-                  <Link
-                    href="/faq"
-                    className="text-gray-600 hover:text-gray-900"
-                  >
-                    FAQ
-                  </Link>
-                </li>
-
-                <li>
-                  <Link
-                    href="/privacy"
-                    className="text-gray-600 hover:text-gray-900"
-                  >
-                    Privacy Policy
-                  </Link>
-                </li>
-              </ul>
-            </div>
+ 
 
             <div className="flex-1">
               <h2 className="text-lg font-semibold mb-4">Follow Us</h2>
